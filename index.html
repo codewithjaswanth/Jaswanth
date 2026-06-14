@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of a creative full-stack developer specializing in building immersive digital experiences with glassmorphic space themes.">
+  <title>Jaswanth Sai | Creative Developer & Designer</title>
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================
+       CUSTOM CURSOR
+       ========================================== -->
+  <div id="custom-cursor"></div>
+  <div id="custom-cursor-dot"></div>
+  <div id="cursor-text-container"><span id="cursor-text"></span></div>
+
+  <!-- ==========================================
+       PRELOADER SCREEN
+       ========================================== -->
+  <div id="preloader">
+    <div class="preloader-logo">JASWANTH<span>SAI</span></div>
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- ==========================================
+       BACKGROUND BLOBS
+       ========================================== -->
+  <div class="blob-container">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+  </div>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header class="navbar-header" id="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="logo">
+        <span>JASWANTH</span>.DEV
+      </a>
+      
+      <nav class="nav-menu-wrapper">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle dark/light theme">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT
+       ========================================== -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="home">
+      <canvas id="starfield"></canvas>
+      <div class="hero-content">
+        <span class="hero-welcome fade-in-element active">Welcome to my universe</span>
+        <h1 class="hero-name fade-in-element active delay-100">
+          Hi, I'm <span>Jaswanth Sai</span>
+        </h1>
+        <div class="hero-role fade-in-element active delay-200">
+          I build <span class="typing-container" id="typed-text"></span>
+        </div>
+        <p class="hero-desc fade-in-element active delay-300">
+          A creative developer crafting immersive web designs at the intersection of pixel-perfect interfaces, liquid glass aesthetics, and performance-driven development.
+        </p>
+        <div class="hero-buttons fade-in-element active delay-400">
+          <a href="#projects" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-secondary">Let's Connect</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-container">
+      <h2 class="section-title"><span>About Me</span></h2>
+      <p class="subtitle">A brief glimpse into who I am and what fuels my creative drive.</p>
+      
+      <div class="about-grid">
+        <div class="about-img-container fade-in-element slide-left">
+          <div class="about-img-glow"></div>
+          <div class="about-img-frame">
+            <img src="assets/about.jpg" alt="Jaswanth Sai profile photo">
+          </div>
+        </div>
+        
+        <div class="about-details fade-in-element slide-right">
+          <h3>Aspiring Full Stack Engineer</h3>
+          <p>
+            Hi, I'm a B.Tech 1st-year student and an aspiring Full Stack Engineer passionate about building modern web applications and solving real-world problems through technology. I am currently learning front-end and back-end development, exploring technologies such as HTML, CSS, JavaScript, React, Node.js, and databases.
+          </p>
+          <p>
+            I enjoy creating projects, improving my coding skills, and continuously learning new technologies. My goal is to become a skilled software engineer and contribute to innovative products that make a positive impact.
+          </p>
+          
+          <div class="about-stats">
+            <div class="stat-item glass-panel">
+              <span class="stat-number">1st</span>
+              <span class="stat-label">Year B.Tech</span>
+            </div>
+            <div class="stat-item glass-panel">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Curiosity</span>
+            </div>
+            <div class="stat-item glass-panel">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Core Skills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-container">
+      <h2 class="section-title"><span>My Skills</span></h2>
+      <p class="subtitle">Languages, tools, and technical competencies that power my digital creations.</p>
+      
+      <div class="skills-grid">
+        <!-- Tech Stacks -->
+        <div class="skills-column fade-in-element slide-left">
+          <h3><i class="fa-solid fa-code"></i> Engineering Core</h3>
+          <div class="skills-list">
+            
+            <div class="skill-bar-container">
+              <div class="skill-bar-info">
+                <span class="skill-bar-name">Frontend (HTML5, CSS3, JS, React)</span>
+                <span class="skill-bar-percent" data-percent="92">0%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-percent="92"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-container">
+              <div class="skill-bar-info">
+                <span class="skill-bar-name">Backend (Node.js, Express.js, Python)</span>
+                <span class="skill-bar-percent" data-percent="80">0%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-percent="80"></div>
+              </div>
+            </div>
+
+
+            <div class="skill-bar-container">
+              <div class="skill-bar-info">
+                <span class="skill-bar-name">Database (MongoDB, DBMS)</span>
+                <span class="skill-bar-percent" data-percent="75">0%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-percent="75"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Design and Creative -->
+        <div class="skills-column fade-in-element slide-right">
+          <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Creative Design</h3>
+          <div class="circular-skills-container">
+            
+            <!-- Skill 1 -->
+            <div class="skill-card glass-panel" data-tilt>
+              <div class="radial-meter">
+                <svg>
+                  <defs>
+                    <linearGradient id="cyan-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="var(--accent-cyan)" />
+                      <stop offset="100%" stop-color="var(--accent-purple)" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="45" cy="45" r="40" class="radial-bg"></circle>
+                  <circle cx="45" cy="45" r="40" class="radial-progress" data-percent="85"></circle>
+                </svg>
+                <div class="radial-percent">0%</div>
+              </div>
+              <span class="skill-card-name">UI / UX Design</span>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="skill-card glass-panel" data-tilt>
+              <div class="radial-meter">
+                <svg>
+                  <circle cx="45" cy="45" r="40" class="radial-bg"></circle>
+                  <circle cx="45" cy="45" r="40" class="radial-progress" data-percent="90"></circle>
+                </svg>
+                <div class="radial-percent">0%</div>
+              </div>
+              <span class="skill-card-name">Interaction Design</span>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="skill-card glass-panel" data-tilt>
+              <div class="radial-meter">
+                <svg>
+                  <circle cx="45" cy="45" r="40" class="radial-bg"></circle>
+                  <circle cx="45" cy="45" r="40" class="radial-progress" data-percent="75"></circle>
+                </svg>
+                <div class="radial-percent">0%</div>
+              </div>
+              <span class="skill-card-name">3D Web Assets</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-container">
+      <h2 class="section-title"><span>Featured Projects</span></h2>
+      <div style="text-align: center; margin-top: 40px;" class="fade-in-element slide-up">
+        <p class="subtitle" style="font-size: 1.5rem; color: var(--text-primary);">Coming Soon...</p>
+        <p style="color: var(--text-secondary);">I am currently working on some exciting new projects. Stay tuned!</p>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="section-container">
+      <h2 class="section-title"><span>Education & Journey</span></h2>
+      <p class="subtitle">A brief overview of my academic background and milestones in tech.</p>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-progress-line" id="timeline-progress"></div>
+        
+        <!-- Experience 1 (Cyan light) -->
+        <div class="timeline-item lit-cyan fade-in-element">
+          <div class="timeline-node"></div>
+          <div class="timeline-content glass-panel">
+            <span class="timeline-date">Present</span>
+            <h3 class="timeline-title">B.Tech 1st Year Student</h3>
+            <span class="timeline-comp">NxtWave Institute of Advanced Technologies</span>
+            <p class="timeline-desc">Currently pursuing my Bachelor of Technology, focusing on full-stack development, algorithms, and mastering modern web technologies.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-container">
+      <h2 class="section-title"><span>Get In Touch</span></h2>
+      <p class="subtitle">Have a project in mind or want to work together? Let's chart a course!</p>
+      
+      <div class="contact-container">
+        <!-- Info block -->
+        <div class="contact-info fade-in-element slide-left">
+          <div>
+            <h3 class="contact-info-title">Contact Information</h3>
+            <p class="contact-info-desc">Feel free to drop an email or connect on social platforms. I usually reply within 24 hours.</p>
+          </div>
+          
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email Me</h4>
+                <p>jasshu777@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Call Me</h4>
+                <p>+91 8978949868</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-icon-wrapper">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Based In</h4>
+                <p>Guntur, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form block -->
+        <div class="contact-form-wrapper fade-in-element slide-right">
+          <form class="contact-form glass-panel" id="contact-form-element" action="#">
+            
+            <div class="form-group">
+              <input type="text" class="form-control" id="form-name" placeholder=" " required>
+              <label for="form-name" class="form-label">Full Name</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" id="form-email" placeholder=" " required>
+              <label for="form-email" class="form-label">Email Address</label>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" id="form-subject" placeholder=" " required>
+              <label for="form-subject" class="form-label">Subject</label>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" id="form-message" placeholder=" " required></textarea>
+              <label for="form-message" class="form-label">Your Message</label>
+            </div>
+
+            <button type="submit" class="submit-btn" id="contact-submit-btn">
+              <span class="submit-btn-text">Send Message</span>
+              <div class="btn-loader"></div>
+              <div class="btn-checkmark"><i class="fa-solid fa-check"></i></div>
+            </button>
+            
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <span>JASWANTH</span>.DEV
+      </div>
+      
+      <div class="footer-copy">
+        &copy; 2026 Jaswanth Sai. All rights reserved. Created with 💜 and Glassmorphism.
+      </div>
+      
+      <div class="footer-socials">
+        <!-- Magnetic Social icons -->
+        <a href="https://wa.me/918978949868" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp" data-magnetic><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/jaswanthsai777/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn Profile" data-magnetic><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/the.jasshu/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram Profile" data-magnetic><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Call Button -->
+  <a href="tel:+918978949868" class="floating-call-btn" aria-label="Call Me Direct">
+    <i class="fa-solid fa-phone-volume"></i>
+  </a>
+
+  <!-- Application Logic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
